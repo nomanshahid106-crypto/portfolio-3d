@@ -1,16 +1,19 @@
-// UI behaviour: typing roles, reveal, counters, bars, tilt, filters, menu, form, progress
+// UI behaviour (ClearPlan-style): quiet staggered fade-rise reveals,
+// skill bars, counters, project filter, menu, form, scroll progress.
+// Deliberately NO typing effect, NO card tilt/lift on hover — motion is
+// calm, short and never covers or moves the content you are reading.
 (function(){
-  // Typing roles
-  var roles=["SQA Engineer","E-commerce Expert — eBay · Shopify · Walmart","Product Builder — Apps & SaaS","Meta & TikTok Ads Specialist","Bug Hunter 🐞"];
-  var el=document.getElementById('typed'),ri=0,ci=0,del=false;
-  function tick(){
-    var word=roles[ri];
-    el.textContent=word.slice(0,ci);
-    if(!del){ ci++; if(ci>word.length){del=true; return setTimeout(tick,1600);} }
-    else{ ci--; if(ci===0){del=false; ri=(ri+1)%roles.length;} }
-    setTimeout(tick, del?32:68);
-  }
-  if(el) tick();
+  // Stagger: grid items rise one after another, ClearPlan-style
+  ['.skills-grid','.projects-grid','.services-grid','.about-facts','.stats'].forEach(function(sel){
+    var grid=document.querySelector(sel);
+    if(!grid) return;
+    Array.prototype.forEach.call(grid.children,function(child,i){
+      child.style.transitionDelay=(i*90)+'ms';
+    });
+  });
+  document.querySelectorAll('.timeline .tl-item').forEach(function(item,i){
+    item.style.transitionDelay=(i*110)+'ms';
+  });
 
   // Reveal on scroll + skill bars + counters
   var io=new IntersectionObserver(function(entries){
@@ -33,19 +36,7 @@
       if(p<1) requestAnimationFrame(step); else node.textContent=prefix+target.toLocaleString()+(target>=100?'+':''); }
     requestAnimationFrame(step);
   }
-  // hero counters are inside .stats.reveal — observe handled above; also trigger directly
   document.querySelectorAll('.stat strong').forEach(function(n){ io.observe(n.parentElement); });
-
-  // 3D tilt on cards (desktop, pointer fine)
-  if(window.matchMedia('(pointer:fine)').matches){
-    document.querySelectorAll('.card-3d').forEach(function(card){
-      card.addEventListener('pointermove',function(ev){
-        var r=card.getBoundingClientRect(), x=(ev.clientX-r.left)/r.width-.5, y=(ev.clientY-r.top)/r.height-.5;
-        card.style.transform='perspective(900px) rotateY('+(x*10)+'deg) rotateX('+(-y*10)+'deg) translateZ(0)';
-      });
-      card.addEventListener('pointerleave',function(){ card.style.transform=''; });
-    });
-  }
 
   // Project filter
   var chips=document.querySelectorAll('.chip');
@@ -62,7 +53,7 @@
   if(btn){ btn.addEventListener('click',function(){ var open=menu.hidden; menu.hidden=!open; btn.setAttribute('aria-expanded',String(open)); });
     menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ menu.hidden=true; }); }); }
 
-  // Scroll progress
+  // Scroll progress (thin top track, like ClearPlan's section tracks)
   var bar=document.getElementById('progress-bar');
   addEventListener('scroll',function(){ var h=document.documentElement; var p=h.scrollTop/(h.scrollHeight-h.clientHeight||1); bar.style.width=(p*100)+'%'; },{passive:true});
 

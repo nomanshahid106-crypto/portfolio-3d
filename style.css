@@ -2,7 +2,7 @@
 :root{--bg:#eef1ff;--violet:#6d4aff;--cyan:#0899c4;--amber:#d98a06;--text:#17224d;--muted:#4d5878;--glass:rgba(255,255,255,.62);--border:rgba(23,34,77,.14)}
 html{scroll-behavior:smooth}
 body{font-family:Inter,system-ui,sans-serif;background:linear-gradient(160deg,#f4f6ff 0%,#e6f4ff 38%,#fdf3e3 72%,#f3eaff 100%);background-attachment:fixed;color:var(--text);overflow-x:hidden;line-height:1.6}
-#webgl{position:absolute;inset:0;width:100%;height:100%;display:block;border-radius:24px}
+#dots{position:absolute;inset:0;width:100%;height:100%;display:block}
 .bg-static{position:fixed;inset:0;z-index:-1;background:radial-gradient(55% 45% at 78% 8%,rgba(124,92,255,.10),transparent 60%),radial-gradient(45% 38% at 8% 88%,rgba(34,211,238,.10),transparent 60%),linear-gradient(165deg,#f7f8ff,#eef5ff 40%,#fdf8ee 75%,#f8f2ff)}
 #progress-bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--violet),var(--cyan),var(--amber));z-index:60}
 main,header,footer{position:relative;z-index:2}
@@ -51,8 +51,8 @@ a{color:#0b7ea6}
 .section-title span{color:#0b7ea6;font-size:.55em;vertical-align:super;margin-right:8px}
 .section-sub{color:var(--muted);margin-bottom:26px}
 .glass{background:var(--glass);border:1px solid var(--border);border-radius:20px;backdrop-filter:blur(12px);box-shadow:0 12px 32px rgba(23,34,77,.07)}
-.card-3d{transform-style:preserve-3d;will-change:transform;transition:box-shadow .25s}
-.card-3d:hover{box-shadow:0 24px 50px rgba(23,34,77,.18),0 0 0 1px rgba(8,153,196,.35)}
+.card-3d{transition:box-shadow .25s,border-color .25s}
+.card-3d:hover{box-shadow:0 14px 30px rgba(23,34,77,.10);border-color:rgba(109,74,255,.35)}
 /* About */
 .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:22px}
 .about-grid .glass{padding:28px}
@@ -115,11 +115,20 @@ footer{text-align:center;padding:70px 5vw 40px;color:var(--muted)}
 
 /* Hero stage — the wow lives HERE, inside its own box, never behind text */
 .hero-stage{position:relative;min-height:480px;border-radius:24px;background:linear-gradient(160deg,rgba(255,255,255,.85),rgba(230,240,255,.65));border:1px solid rgba(23,34,77,.12);box-shadow:0 30px 60px rgba(23,34,77,.14);overflow:hidden}
-.stage-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:7rem}
-.stage-caption{position:absolute;left:14px;right:14px;bottom:12px;text-align:center;font-weight:600;color:#33406e;background:rgba(255,255,255,.78);border:1px solid rgba(23,34,77,.1);padding:8px 12px;border-radius:999px;font-size:.86rem;backdrop-filter:blur(6px)}
-.stage-badge{position:absolute;font-weight:700;font-size:.8rem;background:#fff;color:#26304d;border:1px solid rgba(23,34,77,.12);box-shadow:0 10px 24px rgba(23,34,77,.14);padding:7px 13px;border-radius:999px;animation:badgefloat 4.5s ease-in-out infinite;z-index:3}
-.stage-badge.b1{top:16px;left:16px}
-.stage-badge.b2{top:16px;right:16px;animation-delay:1.2s}
-.stage-badge.b3{bottom:64px;right:16px;animation-delay:2.1s}
-@keyframes badgefloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-9px) rotate(1.5deg)}}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-stage{min-height:400px;order:2}}
+
+/* ClearPlan-style stage UI: shape label + segmented scroll track (no looping motion) */
+.stage-ui{position:absolute;left:14px;right:14px;bottom:12px;background:rgba(255,255,255,.88);border:1px solid rgba(23,34,77,.1);border-radius:16px;padding:10px 14px;backdrop-filter:blur(6px);z-index:3}
+.stage-label{font-weight:700;color:#26304d;font-size:.92rem;text-align:center}
+.stage-segs{display:flex;gap:6px;margin:8px 0 6px}
+.stage-segs span{flex:1;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--violet) calc(var(--fill,0)*100%),rgba(23,34,77,.12) calc(var(--fill,0)*100%))}
+.stage-hint{text-align:center;color:var(--muted);font-size:.78rem}
+/* Hand-drawn scribble accents — drawn once when the heading reveals */
+.scribble-o,.scribble-u{position:relative;white-space:nowrap}
+.scribble-o svg{position:absolute;left:-7%;top:-22%;width:114%;height:148%;overflow:visible;pointer-events:none}
+.scribble-u svg{position:absolute;left:-3%;bottom:-.32em;width:106%;height:.38em;overflow:visible;pointer-events:none}
+.scribble-path{fill:none;stroke:#d98a06;stroke-width:3.2;stroke-linecap:round;stroke-dasharray:700;stroke-dashoffset:700;transition:stroke-dashoffset 1.15s ease .35s}
+.scribble-u .scribble-path{stroke-width:4}
+.scribble-u .p2{transition-delay:.55s}
+.section-title.in .scribble-path{stroke-dashoffset:0}
+@media (prefers-reduced-motion:reduce){.scribble-path{stroke-dashoffset:0;transition:none}}
