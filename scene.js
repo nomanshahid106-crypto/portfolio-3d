@@ -15,12 +15,12 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 const scene = new THREE.Scene();
-scene.fog = new THREE.FogExp2(0x05060f, 0.028);
+scene.fog = new THREE.FogExp2(0xdfe8ff, 0.012);
 const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 200);
 camera.position.set(0, 0, 15);
 
 // Lights
-scene.add(new THREE.AmbientLight(0x8899ff, 0.5));
+scene.add(new THREE.AmbientLight(0xffffff, 1.1));
 const lightViolet = new THREE.PointLight(0x7c5cff, 220, 60); lightViolet.position.set(-8, 6, 6); scene.add(lightViolet);
 const lightCyan = new THREE.PointLight(0x22d3ee, 180, 60); lightCyan.position.set(9, -4, 5); scene.add(lightCyan);
 const lightAmber = new THREE.PointLight(0xf5b544, 90, 50); lightAmber.position.set(0, -10, 3); scene.add(lightAmber);
@@ -42,17 +42,17 @@ function makePoints(count, spread, size, colors) {
   const mat = new THREE.PointsMaterial({ size, vertexColors: true, transparent: true, opacity: 0.9, sizeAttenuation: true, depthWrite: false });
   return new THREE.Points(geo, mat);
 }
-const stars = makePoints(2600, 90, 0.14, [0xffffff, 0x7c5cff, 0x22d3ee, 0xf5b544]);
+const stars = makePoints(2600, 90, 0.15, [0x6d4aff, 0x0899c4, 0xd98a06, 0xdb2777, 0x059669]);
 scene.add(stars);
-const dust = makePoints(500, 40, 0.06, [0x22d3ee, 0xffffff]);
+const dust = makePoints(500, 40, 0.07, [0x0899c4, 0x6d4aff]);
 scene.add(dust);
 
 // ---------- Hero centrepiece: glowing core + rings + orbiters ----------
 const hero = new THREE.Group();
-const coreMat = new THREE.MeshStandardMaterial({ color: 0x7c5cff, roughness: 0.25, metalness: 0.65, emissive: 0x2a1a66, emissiveIntensity: 0.7, flatShading: true });
+const coreMat = new THREE.MeshStandardMaterial({ color: 0x7c5cff, roughness: 0.25, metalness: 0.65, emissive: 0x3b2a80, emissiveIntensity: 0.45, flatShading: true });
 const core = new THREE.Mesh(new THREE.IcosahedronGeometry(1.9, 0), coreMat);
 hero.add(core);
-const coreWire = new THREE.Mesh(new THREE.IcosahedronGeometry(2.15, 1), new THREE.MeshBasicMaterial({ color: 0x22d3ee, wireframe: true, transparent: true, opacity: 0.35 }));
+const coreWire = new THREE.Mesh(new THREE.IcosahedronGeometry(2.15, 1), new THREE.MeshBasicMaterial({ color: 0x0899c4, wireframe: true, transparent: true, opacity: 0.45 }));
 hero.add(coreWire);
 
 const rings = [];
@@ -91,7 +91,7 @@ scene.add(field);
   const pts = [];
   for (let i = 0; i < 26; i++) pts.push(new THREE.Vector3((Math.random() - 0.5) * 26, (Math.random() - 0.5) * 18, -6 - Math.random() * 8));
   const lineGeo = new THREE.BufferGeometry().setFromPoints(pts);
-  const lines = new THREE.Line(lineGeo, new THREE.LineBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.16 }));
+  const lines = new THREE.Line(lineGeo, new THREE.LineBasicMaterial({ color: 0x6d4aff, transparent: true, opacity: 0.22 }));
   scene.add(lines);
 }
 
