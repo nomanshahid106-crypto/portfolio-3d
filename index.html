@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muhammad Noman Shahid — SQA Engineer, E-commerce Expert & Product Builder</title>
+<meta name="description" content="3D portfolio of Muhammad Noman Shahid — SQA Engineer, E-commerce Expert (eBay, Shopify, Walmart) and builder of live products: Counterly, PromptCam, DocVault, MarketPulse, PropMatch, LoveLink and CallAgent." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
+</script>
+</head>
+<body>
+<canvas id="webgl" aria-hidden="true"></canvas>
+<div class="bg-fallback" aria-hidden="true"></div>
+<div id="progress-bar" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="logo" href="#top" aria-label="Home"><span class="logo-cube" aria-hidden="true"></span> NOMAN<span class="dot">.</span>3D</a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+    <a href="#experience">Experience</a><a href="#services">Services</a><a href="#contact" class="nav-cta">Hire Me</a>
+  </nav>
+  <button id="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+</header>
+<div id="mobile-menu" hidden>
+  <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+  <a href="#experience">Experience</a><a href="#services">Services</a><a href="#contact">Hire Me</a>
+</div>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow reveal">👋 Welcome to my 3D portfolio — move your mouse, scroll, explore</p>
+      <h1 class="reveal">Muhammad<br/>Noman <span class="grad">Shahid</span></h1>
+      <p class="hero-roles reveal"><span id="typed" aria-live="polite">SQA Engineer</span><span class="cursor" aria-hidden="true">|</span></p>
+      <p class="hero-sub reveal">I test software until it can't break, run e-commerce stores that actually sell, and build &amp; ship my own live products — from POS systems to AI apps.</p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" href="#projects">View My Work ↓</a>
+        <a class="btn btn-ghost" href="#contact">Let's Work Together</a>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><strong data-count="8">0</strong><span>Live products built</span></div>
+        <div class="stat"><strong data-count="542">0</strong><span>Client orders managed*</span></div>
+        <div class="stat"><strong data-count="18349" data-prefix="$">$0</strong><span>Client sales managed*</span></div>
+        <div class="stat"><strong data-count="3">0</strong><span>Marketplaces: eBay · Shopify · Walmart</span></div>
+      </div>
+      <p class="stat-note reveal">*Across 3 client eBay stores in 90 days.</p>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span></span>Scroll to travel through the scene</div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2 class="section-title reveal"><span>01</span> About Me</h2>
+    <div class="about-grid">
+      <div class="glass card-3d reveal">
+        <h3>Quality first, always.</h3>
+        <p>I'm an <strong>SQA Engineer</strong> based in Pakistan, working with Mercury Sols. My day job is breaking software before users do — manual, functional, UI/UX, regression and API testing, with clear, severity-ranked bug reports developers actually love.</p>
+        <p>Alongside QA, I run <strong>e-commerce operations</strong> — eBay, Shopify and Walmart stores, listings, orders and ads (Meta, TikTok, Snapchat) — and I <strong>build my own products end-to-end</strong>: designing, testing and shipping live apps used by real people.</p>
+      </div>
+      <div class="about-facts reveal">
+        <div class="fact glass"><span>📍</span><div><strong>Location</strong><small>Pakistan · working globally</small></div></div>
+        <div class="fact glass"><span>💼</span><div><strong>Current</strong><small>Mercury Sols — SQA &amp; E-commerce</small></div></div>
+        <div class="fact glass"><span>🛒</span><div><strong>E-commerce</strong><small>eBay · Shopify · Walmart · Meta Ads</small></div></div>
+        <div class="fact glass"><span>🚀</span><div><strong>Builder</strong><small>8 products designed, built &amp; live</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2 class="section-title reveal"><span>02</span> Skills in 3D</h2>
+    <p class="section-sub reveal">Hover a cube — every skill is a block I build on.</p>
+    <div class="skills-grid">
+      <div class="skill glass card-3d reveal"><div class="skill-icon">🧪</div><h3>Manual &amp; Functional Testing</h3><div class="bar"><i style="--w:95%"></i></div><small>Test cases · Exploratory · Cross-browser</small></div>
+      <div class="skill glass card-3d reveal"><div class="skill-icon">🐞</div><h3>Bug Reporting &amp; Regression</h3><div class="bar"><i style="--w:94%"></i></div><small>Severity-ranked · Repro steps · Retesting</small></div>
+      <div class="skill glass card-3d reveal"><div class="skill-icon">🔌</div><h3>API Testing</h3><div class="bar"><i style="--w:88%"></i></div><small>Postman · REST · Status &amp; payload checks</small></div>
+      <div class="skill glass card-3d reveal"><div class="skill-icon">🎨</div><h3>UI / UX Testing</h3><div class="bar"><i style="--w:90%"></i></div><small>Responsive · Usability · Visual QA</small></div>
+      <div class="skill glass card-3d reveal"><div class="skill-icon">🛒</div><h3>eBay &amp; Walmart Selling</h3><div class="bar"><i style="--w:93%"></i></div><small>Listings · Orders · Wholesale sourcing</small></div>
+      <div class="skill glass card-3d reveal"><div class="skill-icon">🛍️</div><h3>Shopify Management</h3><div class="bar"><i style="--w:89%"></i></div><small>Catalog · Products · Store ops</small></div>
+      <div class="skill glass card-3d reveal"><div class="skill-icon">📣</div><h3>Meta &amp; TikTok Ads</h3><div class="bar"><i style="--w:85%"></i></div><small>Campaigns · Creatives · Lead gen</small></div>
+      <div class="skill glass card-3d reveal"><div class="skill-icon">📱</div><h3>Product Building</h3><div class="bar"><i style="--w:87%"></i></div><small>React Native · Next.js · Supabase · Vercel</small></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <h2 class="section-title reveal"><span>03</span> Live Projects</h2>
+    <p class="section-sub reveal">Real products — designed, built, tested and deployed by me. Tilt a card, then visit it live.</p>
+    <div class="filter-row reveal" role="group" aria-label="Filter projects">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="app">Apps</button>
+      <button class="chip" data-filter="saas">SaaS / Web</button>
+      <button class="chip" data-filter="ai">AI</button>
+      <button class="chip" data-filter="3d">3D</button>
+    </div>
+    <div class="projects-grid" id="projects-grid">
+      <article class="project glass card-3d reveal" data-cat="app saas"><div class="p-emoji">🧾</div><h3>Counterly — POS System</h3><p>Complete point-of-sale for shops: billing, stock, refunds, barcode scanning, receipts — mobile app + web portal + admin dashboard.</p><div class="tags"><span>React Native</span><span>Next.js</span><span>Supabase</span></div><a href="https://counterly-web-six.vercel.app" target="_blank" rel="noopener">Visit live ↗</a></article>
+      <article class="project glass card-3d reveal" data-cat="app ai"><div class="p-emoji">📸</div><h3>PromptCam — AI Camera</h3><p>Capture a photo and edit it with a typed prompt using AI image editing — pick a style, describe the change, get a new photo.</p><div class="tags"><span>React Native</span><span>AI Image Edit</span></div><span class="p-note">Mobile app</span></article>
+      <article class="project glass card-3d reveal" data-cat="app"><div class="p-emoji">🗂️</div><h3>DocVault — Document Storage</h3><p>Personal document vault with offline-first storage: save on the phone with no internet, auto-upload when back online, AdMob-supported.</p><div class="tags"><span>React Native</span><span>Supabase</span><span>Offline-first</span></div><span class="p-note">Mobile app</span></article>
+      <article class="project glass card-3d reveal" data-cat="saas ai"><div class="p-emoji">📈</div><h3>MarketPulse — Trading Insights</h3><p>Crypto + forex probability platform on free data only: 48 pairs, candlestick charts, classified news, next-move probabilities, 15-min refresh.</p><div class="tags"><span>Next.js</span><span>Binance Vision</span><span>Yahoo Finance</span></div><a href="https://marketpulse-omega-nine.vercel.app" target="_blank" rel="noopener">Visit live ↗</a></article>
+      <article class="project glass card-3d reveal" data-cat="saas"><div class="p-emoji">🏠</div><h3>PropMatch — Real Estate Matching</h3><p>Rahim Yar Khan property platform: owners list, seekers request, admin matches them — bilingual English / Roman Urdu, Marla-based matching.</p><div class="tags"><span>Next.js</span><span>Bilingual</span></div><a href="https://propmatch-mu.vercel.app" target="_blank" rel="noopener">Visit live ↗</a></article>
+      <article class="project glass card-3d reveal" data-cat="saas ai"><div class="p-emoji">💌</div><h3>LoveLink — AI Proposals</h3><p>No-signup love proposal platform: create a personalised proposal link, the recipient answers YES/NO, and the sender tracks it privately.</p><div class="tags"><span>Next.js</span><span>Share links</span></div><a href="https://lovelink-noman-8aa9.vercel.app" target="_blank" rel="noopener">Visit live ↗</a></article>
+      <article class="project glass card-3d reveal" data-cat="saas ai"><div class="p-emoji">📞</div><h3>CallAgent — AI Call Platform</h3><p>SaaS where AI calls your leads for you — Truck Dispatcher &amp; E-commerce Approval agents, $0.25/min, dedicated number per subscriber.</p><div class="tags"><span>Next.js</span><span>ElevenLabs</span><span>Twilio</span></div><a href="https://callagent-five.vercel.app" target="_blank" rel="noopener">Visit live ↗</a></article>
+      <article class="project glass card-3d reveal" data-cat="3d"><div class="p-emoji">🏢</div><h3>Office 3D Walk</h3><p>A walkable Three.js office: desks, meeting room, sofa area — and an animated man you walk with WASD, first or third person.</p><div class="tags"><span>Three.js</span><span>WebGL</span></div><a href="https://office-3d-walk.vercel.app" target="_blank" rel="noopener">Visit live ↗</a></article>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <h2 class="section-title reveal"><span>04</span> Experience</h2>
+    <div class="timeline">
+      <div class="tl-item reveal"><div class="tl-dot"></div><div class="glass tl-card card-3d"><h3>SQA Engineer &amp; E-commerce Expert — Mercury Sols</h3><small>Current role · Pakistan</small><p>Software QA across web, mobile and APIs, plus e-commerce operations across eBay, Walmart and Shopify and paid marketing on Meta, TikTok and Snapchat.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-dot"></div><div class="glass tl-card card-3d"><h3>E-commerce Management — Client Stores</h3><small>Freelance / Services</small><p>Managed 3 client eBay stores to $18,349 in sales and 542 orders in 90 days — listings, pricing, orders, customer handling and growth.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-dot"></div><div class="glass tl-card card-3d"><h3>QA Engineer — Fiverr</h3><small>Freelance · m_noman_shahid</small><p>Software, website, web-app and APK testing for international clients: functional, UI/UX, regression and API testing with professional bug reports.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-dot"></div><div class="glass tl-card card-3d"><h3>Product Builder — Independent</h3><small>2024 — Present</small><p>Designed, built and shipped 8 live products end-to-end (Counterly, PromptCam, DocVault, MarketPulse, PropMatch, LoveLink, CallAgent, Office 3D Walk) — idea to GitHub to live deployment.</p></div></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <h2 class="section-title reveal"><span>05</span> What I Can Do For You</h2>
+    <div class="services-grid">
+      <div class="service glass card-3d reveal"><div class="s-emoji">🧪</div><h3>Software Testing</h3><p>Manual, functional, UI/UX, regression &amp; API testing for web, mobile and desktop — with reports your developers will thank you for.</p></div>
+      <div class="service glass card-3d reveal"><div class="s-emoji">🛒</div><h3>E-commerce Management</h3><p>Full store handling on eBay, Shopify &amp; Walmart — listings that rank, orders that ship, stores that grow.</p></div>
+      <div class="service glass card-3d reveal"><div class="s-emoji">📣</div><h3>Ads &amp; Marketing</h3><p>Meta, TikTok &amp; Snapchat campaigns and product creatives built to sell, not just to spend.</p></div>
+      <div class="service glass card-3d reveal"><div class="s-emoji">🚀</div><h3>Product Building</h3><p>Have an app or SaaS idea? I take products from spec to a live, tested deployment — like the 8 above.</p></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <h2 class="section-title reveal"><span>06</span> Let's Work Together</h2>
+    <div class="glass contact-card reveal">
+      <p>Have a product to test, a store to grow, or an idea to build? My inbox is open.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="https://github.com/nomanshahid106-crypto" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn btn-ghost" href="https://www.fiverr.com/m_noman_shahid" target="_blank" rel="noopener">Fiverr ↗</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <form id="contact-form">
+        <input required name="name" placeholder="Your name" autocomplete="name" />
+        <input required type="email" name="email" placeholder="Your email" autocomplete="email" />
+        <textarea required name="message" rows="4" placeholder="Tell me about your project…"></textarea>
+        <button class="btn btn-primary" type="submit">Send Message</button>
+        <p id="form-msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+  <footer><p>© 2026 Muhammad Noman Shahid · Built with Three.js, curiosity, and too much chai ☕</p><p class="foot-small">The 3D scene reacts to your mouse and scroll — try it on desktop for the full effect.</p></footer>
+</main>
+<script src="main.js"></script>
+<script type="module" src="scene.js"></script>
+</body>
+</html>
