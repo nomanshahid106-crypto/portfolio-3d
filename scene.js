@@ -10,9 +10,6 @@
   var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
   var dotsNav = document.getElementById('dots');
   var countEl = document.getElementById('panel-count');
-  var nameEl = document.getElementById('panel-name');
-  var prevBtn = document.getElementById('prev-btn');
-  var nextBtn = document.getElementById('next-btn');
   var toggleBtn = document.getElementById('mode-toggle');
   var current = 0, busy = false, mode = 'animated';
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -35,11 +32,7 @@
       b.classList.toggle('current', i === current);
       if (i === current) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
     });
-    document.querySelectorAll('#menu button').forEach(function (b, i) { b.classList.toggle('current', i === current); });
     countEl.textContent = pad(current + 1) + ' / ' + pad(panels.length);
-    nameEl.textContent = panels[current].dataset.title;
-    prevBtn.disabled = current === 0;
-    nextBtn.disabled = current === panels.length - 1;
   }
 
   function goTo(target) {
@@ -71,8 +64,6 @@
   }
   function next() { goTo(current + 1); }
   function prev() { goTo(current - 1); }
-  prevBtn.addEventListener('click', prev);
-  nextBtn.addEventListener('click', next);
 
   // Expose for menu / hero buttons (handled in main.js too)
   window.__portfolioGoTo = goTo;

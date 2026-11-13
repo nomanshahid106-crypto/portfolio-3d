@@ -25,14 +25,9 @@ button{font-family:inherit;cursor:pointer}
 /* ---------- Top bar ---------- */
 .topbar{position:fixed;top:0;left:0;right:0;height:var(--topbar-h);z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 18px;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
 .logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:700;letter-spacing:.04em;color:var(--ink);text-decoration:none;font-size:1rem}
-.logo-mark{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;font-weight:700}
 .topbar-actions{display:flex;align-items:center;gap:10px}
 .mode-btn{background:var(--ink);color:#fff;border:0;border-radius:999px;padding:10px 16px;font-weight:600;font-size:.86rem;box-shadow:0 8px 20px rgba(23,34,77,.18)}
 .mode-btn:hover{background:var(--violet)}
-#menu-btn{background:#fff;border:1px solid var(--border);border-radius:10px;width:40px;height:40px;font-size:1.05rem}
-.menu{position:absolute;top:calc(var(--topbar-h) + 8px);right:14px;background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:8px;display:flex;flex-direction:column;min-width:250px;z-index:70}
-.menu button{background:none;border:0;text-align:left;padding:9px 12px;border-radius:10px;font-size:.93rem;color:var(--ink)}
-.menu button:hover,.menu button.current{background:rgba(109,74,255,.10);font-weight:600}
 
 /* ---------- Section dots + panel nav (animated mode chrome) ---------- */
 .dots{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:55;display:flex;flex-direction:column;gap:9px}
@@ -41,12 +36,7 @@ button{font-family:inherit;cursor:pointer}
 .dots button .tip{position:absolute;right:20px;top:50%;transform:translateY(-50%);background:var(--ink);color:#fff;font-size:.72rem;padding:3px 9px;border-radius:999px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
 .dots button:hover .tip,.dots button:focus-visible .tip{opacity:1}
 .panel-count{position:fixed;left:18px;bottom:16px;z-index:55;font-family:'Space Grotesk';font-weight:700;color:var(--muted);font-size:.9rem}
-.panel-nav{position:fixed;right:16px;bottom:12px;z-index:55;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.9);border:1px solid var(--border);border-radius:999px;padding:6px 8px;box-shadow:var(--shadow)}
-.panel-nav button{background:var(--ink);color:#fff;border:0;border-radius:999px;padding:8px 14px;font-weight:600;font-size:.85rem}
-.panel-nav button:disabled{opacity:.35;cursor:default}
-.panel-nav span{font-size:.85rem;font-weight:600;max-width:190px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-body.full-mode .dots,body.full-mode .panel-count,body.full-mode .panel-nav{display:none}
-
+body.full-mode .dots,body.full-mode .panel-count,body.full-mode 
 /* ---------- Stage & panels ---------- */
 .stage{padding-top:var(--topbar-h)}
 .panel{padding:26px 18px 90px}
@@ -152,8 +142,6 @@ ul.tick li::before{content:'✓';position:absolute;left:0;color:var(--green);fon
 .pph .pf-icon{background:#f5a623}
 .linkedin .pf-icon{background:#0a66c2}
 a.platform-btn:hover{box-shadow:var(--shadow);transform:translateY(-1px)}
-.platform-btn.is-pending{opacity:.55;cursor:not-allowed;background:repeating-linear-gradient(45deg,#fff,#fff 10px,#f4f5fa 10px,#f4f5fa 20px)}
-.pending-note{font-size:.85rem;color:var(--muted)}
 .site-foot{margin-top:26px;text-align:center;color:var(--muted);font-size:.88rem}
 
 /* ============ ANIMATED MODE: globe-like rotating panels ============ */
@@ -179,7 +167,6 @@ body.animated-mode .panel.pre-prev{visibility:visible;opacity:0;transform:rotate
   .hero-grid{grid-template-columns:1fr;min-height:0}
   .two-col,.hire-grid{grid-template-columns:1fr}
   .dots{display:none}
-  .panel-nav span{display:none}
-  .mode-btn{font-size:.78rem;padding:9px 12px}
+    .mode-btn{font-size:.78rem;padding:9px 12px}
   .logo{font-size:.88rem}
 }
