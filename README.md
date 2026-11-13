@@ -1,20 +1,22 @@
-# Noman.3D — Muhammad Noman Shahid Portfolio
+# Muhammad Noman Shahid — Professional Portfolio
 
-A portfolio with **ClearPlan-style animation**: calm, professional motion that never hurts readability.
+A premium personal portfolio built **strictly from my CV** — no invented companies, dates, certifications, achievements, or project links.
 
-- Clean, static light background — nothing moves behind the text
-- **Signature:** a dot-particle artwork inside the hero stage. On load the dots drift from a cloud into a growth chart; as you scroll they disperse and re-form per section — Growth chart → Quality badge ✓ → Skill blocks → Rocket 🚀 → Experience steps → Chat bubble → Envelope — driven by scroll position (stop scrolling and they settle still), with a shape label and a 6-segment progress track under the stage, just like ClearPlan's
-- Quiet **staggered fade-and-rise** reveals for every section and grid, hand-drawn **scribble accents** (oval around "For You", double underline under "Live") that draw themselves once when the heading appears
-- Deliberately minimal interaction feedback: no typing effect, no card tilt/lift — only a soft shadow/border tint on hover, colour change on interactive rows
-- Sections: Hero with animated counters, About, Skills (animated bars), Live Projects (filterable), Experience timeline, Services, Contact
-- Real projects with live links: Counterly, MarketPulse, PropMatch, LoveLink, CallAgent, Office 3D Walk (+ PromptCam & DocVault mobile apps)
-- Mobile responsive, hamburger menu, `prefers-reduced-motion` support (dots render as one static shape)
+**Content (from the CV):** SQL & SQA Associate at Mercury Sols (full-time, Sep 2026 – Present) · eBay Store Management & E-commerce Operations (part-time, remote) · Facilitation Officer at Pakistan Revenue Automation Ltd. (2020–2024) · YouTube Content Manager, Whizzy Marketing (2019–2020) · Digital Marketing Associate, Zaman IT Networks (2017–2019) · BS Information Technology, GC University Faisalabad.
+
+**11 sections:** Introduction · Professional Summary · Technical Skills · Professional Experience · SQL & Database Expertise · SQA · eBay & E-commerce · Projects & Work Showcase (CV work only, contribution stated, **no external project links**) · Education · Strengths & Services · Hire Me / Contact.
+
+**Signature interaction — globe-like 3D rotation:** in Animated mode every section is a full-screen panel; scrolling, swiping, arrow keys, the dot indicators, the menu, or Prev/Next rotates the current panel away around a vertical axis while the next rotates in (CSS 3D transforms + perspective, transitions locked while running). Wheel input scrolls a panel's own content first and only rotates at its top/bottom edge.
+
+**Animation-free mode:** the "📄 View Full Profile Without Animations" button at the top switches to one continuous, normally scrollable page with all sections visible, and back via "Return to Animated Experience". A visitor's system `prefers-reduced-motion` starts the site in full mode automatically.
+
+**Hire Me:** Fiverr button links to the real profile (fiverr.com/m_noman_shahid). PeoplePerHour and LinkedIn buttons are present but inactive until the actual profile links are provided — no fake or placeholder URLs are used.
 
 ## Run locally
-Any static server, e.g. `npx serve .` — then open the printed URL. No build step and no CDN libraries: everything runs from the files in this repo.
+Any static server, e.g. `npx serve .` — then open the printed URL. No build step; the only external asset is Google Fonts.
 
 ## Files
 - `index.html` — content & structure
 - `style.css` — all styling
-- `scene.js` — the scroll-scrubbed dot-particle morph artwork (2D canvas, no libraries)
-- `main.js` — UI behaviour (typing, counters, tilt, filters)
+- `scene.js` — the globe-like panel rotation engine + animated/full mode toggle (no libraries)
+- `main.js` — section menu + showcase category filter

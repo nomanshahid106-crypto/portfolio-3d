@@ -3,163 +3,423 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Muhammad Noman Shahid — SQA Engineer, E-commerce Expert & Product Builder</title>
-<meta name="description" content="3D portfolio of Muhammad Noman Shahid — SQA Engineer, E-commerce Expert (eBay, Shopify, Walmart) and builder of live products: Counterly, PromptCam, DocVault, MarketPulse, PropMatch, LoveLink and CallAgent." />
+<title>Muhammad Noman Shahid — SQL & SQA Associate | eBay & E-commerce Operations</title>
+<meta name="description" content="Professional portfolio of Muhammad Noman Shahid — BS Information Technology professional working in SQL & Software Quality Assurance (full-time, Mercury Sols) and eBay / e-commerce operations (part-time), with enterprise application support experience." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="animated-mode">
 <div class="bg-static" aria-hidden="true"></div>
-<div id="progress-bar" aria-hidden="true"></div>
 
-<header class="nav">
-  <a class="logo" href="#top" aria-label="Home"><span class="logo-cube" aria-hidden="true"></span> NOMAN<span class="dot">.</span>3D</a>
-  <nav class="nav-links" aria-label="Main">
-    <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
-    <a href="#experience">Experience</a><a href="#services">Services</a><a href="#contact" class="nav-cta">Hire Me</a>
+<header class="topbar">
+  <a class="logo" href="#hero" data-goto="0"><span class="logo-mark" aria-hidden="true">N</span> NOMAN SHAHID</a>
+  <div class="topbar-actions">
+    <button id="mode-toggle" class="mode-btn" type="button" aria-pressed="false">📄 View Full Profile Without Animations</button>
+    <button id="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+  <nav class="menu" id="menu" aria-label="Sections" hidden>
+    <button type="button" data-goto="0">01 · Introduction</button>
+    <button type="button" data-goto="1">02 · Professional Summary</button>
+    <button type="button" data-goto="2">03 · Technical Skills</button>
+    <button type="button" data-goto="3">04 · Experience</button>
+    <button type="button" data-goto="4">05 · SQL & Databases</button>
+    <button type="button" data-goto="5">06 · Software QA (SQA)</button>
+    <button type="button" data-goto="6">07 · eBay & E-commerce</button>
+    <button type="button" data-goto="7">08 · Work Showcase</button>
+    <button type="button" data-goto="8">09 · Education</button>
+    <button type="button" data-goto="9">10 · Strengths & Services</button>
+    <button type="button" data-goto="10">11 · Hire Me / Contact</button>
   </nav>
-  <button id="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
 </header>
-<div id="mobile-menu" hidden>
-  <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
-  <a href="#experience">Experience</a><a href="#services">Services</a><a href="#contact">Hire Me</a>
+
+<nav class="dots" id="dots" aria-label="Section navigation"></nav>
+<div class="panel-count" id="panel-count" aria-hidden="true">01 / 11</div>
+<div class="panel-nav" id="panel-nav">
+  <button type="button" id="prev-btn" aria-label="Previous section">← Prev</button>
+  <span id="panel-name">Introduction</span>
+  <button type="button" id="next-btn" aria-label="Next section">Next →</button>
 </div>
 
-<main id="top">
-  <!-- HERO -->
-  <section class="hero">
-   <div class="hero-grid">
-    <div class="hero-inner">
-      <p class="eyebrow reveal">👋 Welcome to my portfolio</p>
-      <h1 class="reveal">Muhammad<br/>Noman <span class="grad">Shahid</span></h1>
-      <p class="hero-roles reveal">SQA Engineer · E-commerce Expert · Product Builder</p>
-      <p class="hero-sub reveal">I test software until it can't break, run e-commerce stores that actually sell, and build &amp; ship my own live products — from POS systems to AI apps.</p>
-      <div class="hero-cta reveal">
-        <a class="btn btn-primary" href="#projects">View My Work ↓</a>
-        <a class="btn btn-ghost" href="#contact">Let's Work Together</a>
-      </div>
-      <div class="stats reveal">
-        <div class="stat"><strong data-count="8">0</strong><span>Live products built</span></div>
-        <div class="stat"><strong data-count="542">0</strong><span>Client orders managed*</span></div>
-        <div class="stat"><strong data-count="18349" data-prefix="$">$0</strong><span>Client sales managed*</span></div>
-        <div class="stat"><strong data-count="3">0</strong><span>Marketplaces: eBay · Shopify · Walmart</span></div>
-      </div>
-      <p class="stat-note reveal">*Across 3 client eBay stores in 90 days.</p>
-    </div>
-    <div class="hero-stage reveal" id="hero-stage" aria-label="Animated dot artwork that changes shape as you scroll">
-      <canvas id="dots" aria-hidden="true"></canvas>
-      <div class="stage-ui">
-        <div class="stage-label" id="stage-label">Growth — stores &amp; sales 📈</div>
-        <div class="stage-segs" id="stage-segs" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-        <p class="stage-hint">Keep scrolling — the dots reshape for every section</p>
-      </div>
-    </div>
-   </div>
-    <div class="scroll-hint" aria-hidden="true"><span></span>Scroll to see my work</div>
-  </section>
+<main class="stage" id="stage">
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h2 class="section-title reveal"><span>01</span> About Me</h2>
-    <div class="about-grid">
-      <div class="glass card-3d reveal">
-        <h3>Quality first, always.</h3>
-        <p>I'm an <strong>SQA Engineer</strong> based in Pakistan, working with Mercury Sols. My day job is breaking software before users do — manual, functional, UI/UX, regression and API testing, with clear, severity-ranked bug reports developers actually love.</p>
-        <p>Alongside QA, I run <strong>e-commerce operations</strong> — eBay, Shopify and Walmart stores, listings, orders and ads (Meta, TikTok, Snapchat) — and I <strong>build my own products end-to-end</strong>: designing, testing and shipping live apps used by real people.</p>
+  <!-- 01 HERO -->
+  <section class="panel" id="hero" data-title="Introduction" aria-label="Introduction">
+    <div class="panel-inner hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">BS Information Technology · Islamabad, Pakistan</p>
+        <h1>Muhammad<br/>Noman <span class="grad">Shahid</span></h1>
+        <p class="hero-roles">SQL &amp; Software Quality Assurance Associate</p>
+        <p class="hero-sub">Full-time SQL &amp; SQA professional at Mercury Sols — testing websites, mobile apps, CRM, ERP and enterprise systems, validating data with SQL, and testing APIs with Postman. Alongside this, I manage eBay and e-commerce store operations part-time.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" type="button" data-goto="3">View My Experience</button>
+          <button class="btn btn-ghost" type="button" data-goto="10">Hire Me</button>
+        </div>
+        <ul class="hero-contact">
+          <li>📍 Islamabad, Pakistan</li>
+          <li>✉️ <a href="mailto:noman.shahid437@gmail.com">noman.shahid437@gmail.com</a></li>
+          <li>📞 <a href="tel:+923055618922">0305-5618922</a></li>
+        </ul>
       </div>
-      <div class="about-facts reveal">
-        <div class="fact glass"><span>📍</span><div><strong>Location</strong><small>Pakistan · working globally</small></div></div>
-        <div class="fact glass"><span>💼</span><div><strong>Current</strong><small>Mercury Sols — SQA &amp; E-commerce</small></div></div>
-        <div class="fact glass"><span>🛒</span><div><strong>E-commerce</strong><small>eBay · Shopify · Walmart · Meta Ads</small></div></div>
-        <div class="fact glass"><span>🚀</span><div><strong>Builder</strong><small>8 products designed, built &amp; live</small></div></div>
+      <div class="hero-photo">
+        <div class="photo-ph" role="img" aria-label="Profile image placeholder">
+          <span class="photo-initials">MNS</span>
+          <span class="photo-label">Profile image placeholder</span>
+        </div>
+        <div class="hero-badges">
+          <span class="hbadge">💼 Full-time — SQL &amp; SQA, Mercury Sols</span>
+          <span class="hbadge">🛒 Part-time — eBay &amp; E-commerce</span>
+          <span class="hbadge">🎓 BS Information Technology</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <h2 class="section-title reveal"><span>02</span> Skills in 3D</h2>
-    <p class="section-sub reveal">Hover a cube — every skill is a block I build on.</p>
-    <div class="skills-grid">
-      <div class="skill glass card-3d reveal"><div class="skill-icon">🧪</div><h3>Manual &amp; Functional Testing</h3><div class="bar"><i style="--w:95%"></i></div><small>Test cases · Exploratory · Cross-browser</small></div>
-      <div class="skill glass card-3d reveal"><div class="skill-icon">🐞</div><h3>Bug Reporting &amp; Regression</h3><div class="bar"><i style="--w:94%"></i></div><small>Severity-ranked · Repro steps · Retesting</small></div>
-      <div class="skill glass card-3d reveal"><div class="skill-icon">🔌</div><h3>API Testing</h3><div class="bar"><i style="--w:88%"></i></div><small>Postman · REST · Status &amp; payload checks</small></div>
-      <div class="skill glass card-3d reveal"><div class="skill-icon">🎨</div><h3>UI / UX Testing</h3><div class="bar"><i style="--w:90%"></i></div><small>Responsive · Usability · Visual QA</small></div>
-      <div class="skill glass card-3d reveal"><div class="skill-icon">🛒</div><h3>eBay &amp; Walmart Selling</h3><div class="bar"><i style="--w:93%"></i></div><small>Listings · Orders · Wholesale sourcing</small></div>
-      <div class="skill glass card-3d reveal"><div class="skill-icon">🛍️</div><h3>Shopify Management</h3><div class="bar"><i style="--w:89%"></i></div><small>Catalog · Products · Store ops</small></div>
-      <div class="skill glass card-3d reveal"><div class="skill-icon">📣</div><h3>Meta &amp; TikTok Ads</h3><div class="bar"><i style="--w:85%"></i></div><small>Campaigns · Creatives · Lead gen</small></div>
-      <div class="skill glass card-3d reveal"><div class="skill-icon">📱</div><h3>Product Building</h3><div class="bar"><i style="--w:87%"></i></div><small>React Native · Next.js · Supabase · Vercel</small></div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <h2 class="section-title reveal"><span>03</span> <span class="scribble-u">Live<svg viewBox="0 0 120 14" preserveAspectRatio="none" aria-hidden="true"><path class="scribble-path" d="M3 5 C 35 2, 80 3, 117 4"/><path class="scribble-path p2" d="M6 11 C 40 8, 82 9, 114 10"/></svg></span> Projects</h2>
-    <p class="section-sub reveal">Real products — designed, built, tested and deployed by me. Tilt a card, then visit it live.</p>
-    <div class="filter-row reveal" role="group" aria-label="Filter projects">
-      <button class="chip active" data-filter="all">All</button>
-      <button class="chip" data-filter="app">Apps</button>
-      <button class="chip" data-filter="saas">SaaS / Web</button>
-      <button class="chip" data-filter="ai">AI</button>
-      <button class="chip" data-filter="3d">3D</button>
-    </div>
-    <div class="projects-grid" id="projects-grid">
-      <article class="project glass card-3d reveal" data-cat="app saas"><div class="p-emoji">🧾</div><h3>Counterly — POS System</h3><p>Complete point-of-sale for shops: billing, stock, refunds, barcode scanning, receipts — mobile app + web portal + admin dashboard.</p><div class="tags"><span>React Native</span><span>Next.js</span><span>Supabase</span></div><a href="https://counterly-web-six.vercel.app" target="_blank" rel="noopener">Visit live ↗</a></article>
-      <article class="project glass card-3d reveal" data-cat="app ai"><div class="p-emoji">📸</div><h3>PromptCam — AI Camera</h3><p>Capture a photo and edit it with a typed prompt using AI image editing — pick a style, describe the change, get a new photo.</p><div class="tags"><span>React Native</span><span>AI Image Edit</span></div><span class="p-note">Mobile app</span></article>
-      <article class="project glass card-3d reveal" data-cat="app"><div class="p-emoji">🗂️</div><h3>DocVault — Document Storage</h3><p>Personal document vault with offline-first storage: save on the phone with no internet, auto-upload when back online, AdMob-supported.</p><div class="tags"><span>React Native</span><span>Supabase</span><span>Offline-first</span></div><span class="p-note">Mobile app</span></article>
-      <article class="project glass card-3d reveal" data-cat="saas ai"><div class="p-emoji">📈</div><h3>MarketPulse — Trading Insights</h3><p>Crypto + forex probability platform on free data only: 48 pairs, candlestick charts, classified news, next-move probabilities, 15-min refresh.</p><div class="tags"><span>Next.js</span><span>Binance Vision</span><span>Yahoo Finance</span></div><a href="https://marketpulse-omega-nine.vercel.app" target="_blank" rel="noopener">Visit live ↗</a></article>
-      <article class="project glass card-3d reveal" data-cat="saas"><div class="p-emoji">🏠</div><h3>PropMatch — Real Estate Matching</h3><p>Rahim Yar Khan property platform: owners list, seekers request, admin matches them — bilingual English / Roman Urdu, Marla-based matching.</p><div class="tags"><span>Next.js</span><span>Bilingual</span></div><a href="https://propmatch-mu.vercel.app" target="_blank" rel="noopener">Visit live ↗</a></article>
-      <article class="project glass card-3d reveal" data-cat="saas ai"><div class="p-emoji">💌</div><h3>LoveLink — AI Proposals</h3><p>No-signup love proposal platform: create a personalised proposal link, the recipient answers YES/NO, and the sender tracks it privately.</p><div class="tags"><span>Next.js</span><span>Share links</span></div><a href="https://lovelink-noman-8aa9.vercel.app" target="_blank" rel="noopener">Visit live ↗</a></article>
-      <article class="project glass card-3d reveal" data-cat="saas ai"><div class="p-emoji">📞</div><h3>CallAgent — AI Call Platform</h3><p>SaaS where AI calls your leads for you — Truck Dispatcher &amp; E-commerce Approval agents, $0.25/min, dedicated number per subscriber.</p><div class="tags"><span>Next.js</span><span>ElevenLabs</span><span>Twilio</span></div><a href="https://callagent-five.vercel.app" target="_blank" rel="noopener">Visit live ↗</a></article>
-      <article class="project glass card-3d reveal" data-cat="3d"><div class="p-emoji">🏢</div><h3>Office 3D Walk</h3><p>A walkable Three.js office: desks, meeting room, sofa area — and an animated man you walk with WASD, first or third person.</p><div class="tags"><span>Three.js</span><span>WebGL</span></div><a href="https://office-3d-walk.vercel.app" target="_blank" rel="noopener">Visit live ↗</a></article>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section">
-    <h2 class="section-title reveal"><span>04</span> Experience</h2>
-    <div class="timeline">
-      <div class="tl-item reveal"><div class="tl-dot"></div><div class="glass tl-card card-3d"><h3>SQA Engineer &amp; E-commerce Expert — Mercury Sols</h3><small>Current role · Pakistan</small><p>Software QA across web, mobile and APIs, plus e-commerce operations across eBay, Walmart and Shopify and paid marketing on Meta, TikTok and Snapchat.</p></div></div>
-      <div class="tl-item reveal"><div class="tl-dot"></div><div class="glass tl-card card-3d"><h3>E-commerce Management — Client Stores</h3><small>Freelance / Services</small><p>Managed 3 client eBay stores to $18,349 in sales and 542 orders in 90 days — listings, pricing, orders, customer handling and growth.</p></div></div>
-      <div class="tl-item reveal"><div class="tl-dot"></div><div class="glass tl-card card-3d"><h3>QA Engineer — Fiverr</h3><small>Freelance · m_noman_shahid</small><p>Software, website, web-app and APK testing for international clients: functional, UI/UX, regression and API testing with professional bug reports.</p></div></div>
-      <div class="tl-item reveal"><div class="tl-dot"></div><div class="glass tl-card card-3d"><h3>Product Builder — Independent</h3><small>2024 — Present</small><p>Designed, built and shipped 8 live products end-to-end (Counterly, PromptCam, DocVault, MarketPulse, PropMatch, LoveLink, CallAgent, Office 3D Walk) — idea to GitHub to live deployment.</p></div></div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="section">
-    <h2 class="section-title reveal"><span>05</span> What I Can Do <span class="scribble-o">For You<svg viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true"><path class="scribble-path" d="M100 6 C 160 2, 198 16, 196 40 C 194 66, 140 78, 92 76 C 44 74, 4 62, 5 38 C 6 15, 55 4, 112 7"/></svg></span></h2>
-    <div class="services-grid">
-      <div class="service glass card-3d reveal"><div class="s-emoji">🧪</div><h3>Software Testing</h3><p>Manual, functional, UI/UX, regression &amp; API testing for web, mobile and desktop — with reports your developers will thank you for.</p></div>
-      <div class="service glass card-3d reveal"><div class="s-emoji">🛒</div><h3>E-commerce Management</h3><p>Full store handling on eBay, Shopify &amp; Walmart — listings that rank, orders that ship, stores that grow.</p></div>
-      <div class="service glass card-3d reveal"><div class="s-emoji">📣</div><h3>Ads &amp; Marketing</h3><p>Meta, TikTok &amp; Snapchat campaigns and product creatives built to sell, not just to spend.</p></div>
-      <div class="service glass card-3d reveal"><div class="s-emoji">🚀</div><h3>Product Building</h3><p>Have an app or SaaS idea? I take products from spec to a live, tested deployment — like the 8 above.</p></div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section contact">
-    <h2 class="section-title reveal"><span>06</span> Let's Work Together</h2>
-    <div class="glass contact-card reveal">
-      <p>Have a product to test, a store to grow, or an idea to build? My inbox is open.</p>
-      <div class="contact-links">
-        <a class="btn btn-primary" href="https://github.com/nomanshahid106-crypto" target="_blank" rel="noopener">GitHub ↗</a>
-        <a class="btn btn-ghost" href="https://www.fiverr.com/m_noman_shahid" target="_blank" rel="noopener">Fiverr ↗</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn ↗</a>
+  <!-- 02 SUMMARY -->
+  <section class="panel" id="summary" data-title="Professional Summary" aria-label="Professional Summary">
+    <div class="panel-inner">
+      <h2 class="p-title"><span>02</span> Professional Summary</h2>
+      <div class="card summary-card">
+        <p>BS Information Technology professional with combined experience in software quality assurance, SQL/database operations, enterprise application support, and e-commerce store management.</p>
+        <p>Experienced in manual testing of websites, mobile applications, CRM, ERP, and enterprise systems; API testing with Postman; performance testing with Apache JMeter; and web/mobile test automation tools including Selenium, Playwright, and Appium.</p>
+        <p>Also brings hands-on eBay store operations experience covering product research, listing management, sourcing, inventory, order processing, and customer support. Detail-oriented, analytical, and comfortable working with technical and business teams.</p>
       </div>
-      <form id="contact-form">
-        <input required name="name" placeholder="Your name" autocomplete="name" />
-        <input required type="email" name="email" placeholder="Your email" autocomplete="email" />
-        <textarea required name="message" rows="4" placeholder="Tell me about your project…"></textarea>
-        <button class="btn btn-primary" type="submit">Send Message</button>
-        <p id="form-msg" role="status"></p>
-      </form>
+      <div class="fact-grid">
+        <div class="card fact"><strong>Full-time role</strong><span>SQL &amp; SQA Associate — Mercury Sols</span></div>
+        <div class="card fact"><strong>Part-time work</strong><span>eBay Store Management &amp; E-commerce Operations (remote)</span></div>
+        <div class="card fact"><strong>Support background</strong><span>Facilitation Officer, User Support — Pakistan Revenue Automation Ltd. (2020–2024)</span></div>
+        <div class="card fact"><strong>Education</strong><span>BS Information Technology — GC University Faisalabad</span></div>
+      </div>
     </div>
   </section>
-  <footer><p>© 2026 Muhammad Noman Shahid · Built with curiosity, clean design, and too much chai ☕</p><p class="foot-small">The dot artwork in the hero reshapes as you scroll — the rest of the page stays clean and easy to read.</p></footer>
+
+  <!-- 03 SKILLS -->
+  <section class="panel" id="skills" data-title="Technical Skills" aria-label="Technical Skills">
+    <div class="panel-inner">
+      <h2 class="p-title"><span>03</span> Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="card skill"><div class="s-icon">🧪</div><h3>Software QA &amp; Testing</h3><p>Manual, Functional, Regression, UI, Exploratory, Cross-browser &amp; Mobile Testing</p></div>
+        <div class="card skill"><div class="s-icon">🔌</div><h3>API &amp; Performance Testing</h3><p>Postman, Apache JMeter, Request/Response Validation</p></div>
+        <div class="card skill"><div class="s-icon">🤖</div><h3>Automation Testing</h3><p>Selenium, Playwright, Appium</p></div>
+        <div class="card skill"><div class="s-icon">🗄️</div><h3>SQL &amp; Database</h3><p>SQL Queries, Data Retrieval, Filtering, Joins, Aggregations, Data Validation</p></div>
+        <div class="card skill"><div class="s-icon">🛒</div><h3>E-commerce</h3><p>eBay Store Management, Product Research, Listings, Sourcing, Inventory &amp; Orders</p></div>
+        <div class="card skill"><div class="s-icon">🏢</div><h3>Business Systems</h3><p>CRM, ERP, Enterprise Applications, Workflow Validation, User Support</p></div>
+        <div class="card skill"><div class="s-icon">🧰</div><h3>Tools &amp; Productivity</h3><p>MS Excel, MS Word, Jira (working familiarity), Windows</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 EXPERIENCE -->
+  <section class="panel" id="experience" data-title="Professional Experience" aria-label="Professional Experience">
+    <div class="panel-inner">
+      <h2 class="p-title"><span>04</span> Professional Experience</h2>
+      <div class="xp-list">
+        <article class="card xp">
+          <header><h3>SQL &amp; Software Quality Assurance (SQA) Associate</h3><span class="xp-badge full">Full-time</span></header>
+          <p class="xp-meta">Mercury Sols · Sep 2026 – Present · Rahim Yar Khan, Pakistan</p>
+          <ul>
+            <li>Work with SQL to retrieve, filter, organize, and validate records to support data-related tasks and application workflows.</li>
+            <li>Write and execute SQL queries to inspect database records, verify data accuracy, and investigate inconsistencies.</li>
+            <li>Perform manual testing of websites and mobile applications to verify functionality, usability, and overall application quality.</li>
+            <li>Test CRM systems, ERP solutions, and enterprise applications against functional requirements and expected workflows.</li>
+            <li>Execute functional, regression, UI, and exploratory testing to identify defects and inconsistencies.</li>
+            <li>Perform API testing using Postman, validating endpoints, response codes, response data, and request/response behavior.</li>
+            <li>Identify, document, and report software defects with clear descriptions and supporting evidence; retest fixes and communicate results.</li>
+            <li>Test application workflows, business logic, forms, data handling, and user interactions across devices, browsers, and screen sizes.</li>
+            <li>Use Apache JMeter for performance/load testing activities and contribute to software quality improvement with developers and team members.</li>
+          </ul>
+        </article>
+        <article class="card xp">
+          <header><h3>eBay Store Management &amp; E-commerce Operations</h3><span class="xp-badge part">Part-time</span></header>
+          <p class="xp-meta">Independent / Client Store Operations · Remote</p>
+          <ul>
+            <li>Manage day-to-day eBay store activities, including product research, product sourcing, listing creation, and listing optimization.</li>
+            <li>Prepare product titles, item specifics, descriptions, and relevant keywords to improve listing quality and discoverability.</li>
+            <li>Coordinate product sourcing from suppliers and manage inventory records, stock availability, and quantity updates.</li>
+            <li>Monitor orders, coordinate shipping and fulfillment, and follow up on delivery or order-related issues.</li>
+            <li>Respond to customer inquiries and support routine after-sales activities, including returns, refunds, and order concerns.</li>
+            <li>Review store performance and sales information, maintain operational records, and support smooth store workflows.</li>
+          </ul>
+        </article>
+        <article class="card xp">
+          <header><h3>Facilitation Officer – User Support Department</h3><span class="xp-badge full">Full-time</span></header>
+          <p class="xp-meta">Pakistan Revenue Automation Ltd. – Sadiqabad · Sep 2020 – May 2024</p>
+          <ul>
+            <li>Provided technical training and support for enterprise systems used by Customs staff, including WeBoc, Anti-Smuggling Portal, and Sales Trac.</li>
+            <li>Investigated and resolved software, hardware, networking, and application-related issues.</li>
+            <li>Performed software installations and operating-system configuration to maintain workstation readiness.</li>
+            <li>Prepared technical and operational reports and maintained accurate documentation.</li>
+            <li>Supported GD filing and documentation processes and provided technical guidance to clearing agents.</li>
+            <li>Worked with users and stakeholders to identify issues, communicate requirements, and restore smooth operations.</li>
+          </ul>
+        </article>
+        <article class="card xp">
+          <header><h3>YouTube Content Manager</h3></header>
+          <p class="xp-meta">Whizzy Marketing – Rawalpindi · Oct 2019 – Mar 2020</p>
+          <ul>
+            <li>Managed day-to-day content operations and scheduling for multiple YouTube channels.</li>
+            <li>Coordinated uploads, workflow requirements, and routine channel-management tasks.</li>
+          </ul>
+        </article>
+        <article class="card xp">
+          <header><h3>Digital Marketing Associate</h3></header>
+          <p class="xp-meta">Zaman IT Networks – Faisalabad · Sep 2017 – Jul 2019</p>
+          <ul>
+            <li>Managed client digital accounts, content, queries, and routine online operations.</li>
+            <li>Supported paid advertising campaigns and maintained communication with clients.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 SQL -->
+  <section class="panel" id="sql" data-title="SQL & Database Expertise" aria-label="SQL and Database Expertise">
+    <div class="panel-inner">
+      <h2 class="p-title"><span>05</span> SQL &amp; Database Expertise</h2>
+      <p class="p-lead">SQL is a core part of my full-time role at Mercury Sols — used daily to support data-related tasks, application workflows, and quality checks.</p>
+      <div class="two-col">
+        <div class="card">
+          <h3>What I do with SQL</h3>
+          <ul class="tick">
+            <li>Write and execute SQL queries to retrieve, filter, and organize records</li>
+            <li>Inspect database records to verify data accuracy</li>
+            <li>Investigate data inconsistencies and support troubleshooting</li>
+            <li>Validate data behind application workflows, forms, and business logic</li>
+            <li>Support data-related tasks for the wider team</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>SQL skills from my CV</h3>
+          <div class="chips">
+            <span>SQL Queries</span><span>Data Retrieval</span><span>Filtering</span><span>Joins</span><span>Aggregations</span><span>Data Validation</span><span>Database Operations</span><span>Database Troubleshooting</span>
+          </div>
+          <h3 class="mt">Services</h3>
+          <ul class="tick">
+            <li>SQL Queries</li><li>Database Operations</li><li>Data Retrieval and Validation</li><li>Database Troubleshooting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 SQA -->
+  <section class="panel" id="sqa" data-title="Software Quality Assurance" aria-label="Software Quality Assurance">
+    <div class="panel-inner">
+      <h2 class="p-title"><span>06</span> Software Quality Assurance (SQA)</h2>
+      <p class="p-lead">Manual testing of websites, mobile applications, CRM, ERP, and enterprise systems — against functional requirements and expected workflows.</p>
+      <div class="two-col">
+        <div class="card">
+          <h3>Testing I perform</h3>
+          <ul class="tick">
+            <li>Manual, functional, regression, UI, and exploratory testing</li>
+            <li>Cross-browser and mobile testing across devices and screen sizes</li>
+            <li>API testing with Postman — endpoints, response codes, and response data</li>
+            <li>Performance / load testing activities with Apache JMeter</li>
+            <li>Web/mobile test automation tools: Selenium, Playwright, Appium</li>
+            <li>Workflows, business logic, forms, data handling, and user interactions</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>How I work</h3>
+          <ul class="tick">
+            <li>Identify defects and inconsistencies through structured test execution</li>
+            <li>Document and report defects with clear descriptions and supporting evidence</li>
+            <li>Retest fixes and communicate results to developers and team members</li>
+            <li>Contribute to overall software quality improvement</li>
+          </ul>
+          <h3 class="mt">Services</h3>
+          <div class="chips">
+            <span>Manual Testing</span><span>Website Testing</span><span>Mobile Application Testing</span><span>API Testing</span><span>Performance Testing</span><span>Automation Testing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 EBAY & E-COMMERCE -->
+  <section class="panel" id="ecommerce" data-title="eBay & E-commerce Management" aria-label="eBay and E-commerce Management">
+    <div class="panel-inner">
+      <h2 class="p-title"><span>07</span> eBay &amp; E-commerce Management <span class="xp-badge part">Part-time</span></h2>
+      <p class="p-lead">Part-time, remote — independent and client store operations, run alongside my full-time SQL &amp; SQA role.</p>
+      <div class="two-col">
+        <div class="card">
+          <h3>eBay store operations</h3>
+          <ul class="tick">
+            <li>Product research and product sourcing from suppliers</li>
+            <li>Listing creation and optimization — titles, item specifics, descriptions, keywords</li>
+            <li>Inventory management — stock records, availability, and quantity updates</li>
+            <li>Order processing — shipping and fulfillment coordination, delivery follow-up</li>
+            <li>Customer support — inquiries, returns, refunds, and after-sales concerns</li>
+            <li>Store performance and sales reviews; operational record keeping</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Additional e-commerce &amp; digital experience</h3>
+          <ul class="tick">
+            <li><strong>Shopify:</strong> Store creation, product listing, sales management, and order-related activities.</li>
+            <li><strong>Amazon / Walmart:</strong> Product research and listing, order fulfillment, and store operations.</li>
+            <li><strong>Digital Marketing:</strong> Social media account management, content coordination, and paid campaign support.</li>
+            <li><strong>WordPress:</strong> Basic website development and content management.</li>
+          </ul>
+          <h3 class="mt">Services</h3>
+          <div class="chips">
+            <span>eBay Store Management</span><span>Product Research</span><span>Product Listing Optimization</span><span>Inventory Management</span><span>Order Processing</span><span>E-commerce Operations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 SHOWCASE -->
+  <section class="panel" id="showcase" data-title="Projects & Work Showcase" aria-label="Projects and Work Showcase">
+    <div class="panel-inner">
+      <h2 class="p-title"><span>08</span> Projects &amp; Work Showcase</h2>
+      <p class="p-lead">A showcase of the work described in my CV. My contribution is stated exactly as it was — testing, data validation, support, or operations.</p>
+      <div class="filters" role="group" aria-label="Filter showcase by category">
+        <button class="chip active" type="button" data-filter="all">All</button>
+        <button class="chip" type="button" data-filter="sql">SQL</button>
+        <button class="chip" type="button" data-filter="sqa">SQA</button>
+        <button class="chip" type="button" data-filter="webapp">Web Applications</button>
+        <button class="chip" type="button" data-filter="mobile">Mobile Applications</button>
+        <button class="chip" type="button" data-filter="ecom">E-commerce</button>
+        <button class="chip" type="button" data-filter="support">IT Support</button>
+        <button class="chip" type="button" data-filter="digital">Digital</button>
+      </div>
+      <div class="show-grid">
+        <article class="card show" data-cat="sqa webapp">
+          <div class="show-visual v1" aria-hidden="true">🏢</div>
+          <h3>CRM, ERP &amp; Enterprise Application Testing</h3>
+          <p>Tested CRM systems, ERP solutions, and enterprise applications against functional requirements and expected workflows at Mercury Sols.</p>
+          <div class="tags"><span>Manual Testing</span><span>Functional Testing</span><span>Workflow Validation</span></div>
+          <p class="contrib"><strong>My contribution:</strong> Testing &amp; quality assurance</p>
+        </article>
+        <article class="card show" data-cat="sqa webapp mobile">
+          <div class="show-visual v2" aria-hidden="true">📱</div>
+          <h3>Website &amp; Mobile Application Testing</h3>
+          <p>Manual testing of websites and mobile applications — functionality, usability, and overall quality across devices, browsers, and screen sizes.</p>
+          <div class="tags"><span>Functional</span><span>Regression</span><span>UI</span><span>Exploratory</span><span>Cross-browser</span></div>
+          <p class="contrib"><strong>My contribution:</strong> Testing &amp; defect reporting</p>
+        </article>
+        <article class="card show" data-cat="sqa webapp">
+          <div class="show-visual v3" aria-hidden="true">🔌</div>
+          <h3>API Testing &amp; Validation</h3>
+          <p>API testing using Postman — validating endpoints, response codes, response data, and request/response behavior.</p>
+          <div class="tags"><span>Postman</span><span>API Testing</span><span>Request/Response Validation</span></div>
+          <p class="contrib"><strong>My contribution:</strong> API testing &amp; validation</p>
+        </article>
+        <article class="card show" data-cat="sqa">
+          <div class="show-visual v4" aria-hidden="true">⚡</div>
+          <h3>Performance &amp; Load Testing</h3>
+          <p>Performance and load testing activities using Apache JMeter, contributing to software quality improvement with developers and team members.</p>
+          <div class="tags"><span>Apache JMeter</span><span>Performance Testing</span></div>
+          <p class="contrib"><strong>My contribution:</strong> Performance testing support</p>
+        </article>
+        <article class="card show" data-cat="sql">
+          <div class="show-visual v5" aria-hidden="true">🗄️</div>
+          <h3>SQL Data Validation &amp; Database Operations</h3>
+          <p>Writing and executing SQL queries to retrieve, filter, and organize records; inspecting database records, verifying data accuracy, and investigating inconsistencies.</p>
+          <div class="tags"><span>SQL Queries</span><span>Joins</span><span>Aggregations</span><span>Data Validation</span></div>
+          <p class="contrib"><strong>My contribution:</strong> SQL &amp; database operations</p>
+        </article>
+        <article class="card show" data-cat="ecom">
+          <div class="show-visual v6" aria-hidden="true">🛒</div>
+          <h3>eBay Store Operations</h3>
+          <p>Day-to-day management of eBay stores — product research, sourcing, listing creation and optimization, inventory, order processing, and customer support (part-time, remote).</p>
+          <div class="tags"><span>eBay</span><span>Product Research</span><span>Listings</span><span>Inventory &amp; Orders</span></div>
+          <p class="contrib"><strong>My contribution:</strong> Store management &amp; operations</p>
+        </article>
+        <article class="card show" data-cat="ecom">
+          <div class="show-visual v7" aria-hidden="true">🏬</div>
+          <h3>Shopify, Amazon &amp; Walmart Operations</h3>
+          <p>Shopify store creation, product listing, sales management, and order activities; Amazon/Walmart product research, listing, order fulfillment, and store operations.</p>
+          <div class="tags"><span>Shopify</span><span>Amazon</span><span>Walmart</span></div>
+          <p class="contrib"><strong>My contribution:</strong> E-commerce operations</p>
+        </article>
+        <article class="card show" data-cat="support webapp">
+          <div class="show-visual v8" aria-hidden="true">🛠️</div>
+          <h3>Enterprise Systems Support &amp; Training — PRAL</h3>
+          <p>Technical training and support for enterprise systems used by Customs staff — WeBoc, Anti-Smuggling Portal, and Sales Trac — plus resolving software, hardware, and networking issues at Pakistan Revenue Automation Ltd.</p>
+          <div class="tags"><span>User Support</span><span>Technical Training</span><span>Enterprise Systems</span></div>
+          <p class="contrib"><strong>My contribution:</strong> Support &amp; training (not development)</p>
+        </article>
+        <article class="card show" data-cat="digital">
+          <div class="show-visual v9" aria-hidden="true">🎬</div>
+          <h3>YouTube Channel Content Operations</h3>
+          <p>Managed day-to-day content operations and scheduling for multiple YouTube channels at Whizzy Marketing — uploads, workflow requirements, and routine channel management.</p>
+          <div class="tags"><span>YouTube</span><span>Content Operations</span><span>Scheduling</span></div>
+          <p class="contrib"><strong>My contribution:</strong> Content management</p>
+        </article>
+        <article class="card show" data-cat="digital">
+          <div class="show-visual v10" aria-hidden="true">📣</div>
+          <h3>Digital Marketing Accounts &amp; Campaigns</h3>
+          <p>Managed client digital accounts, content, and queries at Zaman IT Networks; supported paid advertising campaigns and maintained client communication.</p>
+          <div class="tags"><span>Digital Marketing</span><span>Paid Campaigns</span><span>Client Accounts</span></div>
+          <p class="contrib"><strong>My contribution:</strong> Account management &amp; campaign support</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 EDUCATION -->
+  <section class="panel" id="education" data-title="Education" aria-label="Education">
+    <div class="panel-inner">
+      <h2 class="p-title"><span>09</span> Education</h2>
+      <div class="edu-list">
+        <article class="card edu"><div class="s-icon">🎓</div><div><h3>BS Information Technology</h3><p>Government College University Faisalabad</p><span class="edu-years">2013 – 2017</span></div></article>
+        <article class="card edu"><div class="s-icon">🏫</div><div><h3>ICS</h3><p>Army Public College Rahim Yar Khan</p><span class="edu-years">2011 – 2013</span></div></article>
+        <article class="card edu"><div class="s-icon">📚</div><div><h3>Matriculation</h3><p>Govt. Colony School Rahim Yar Khan</p><span class="edu-years">2009 – 2011</span></div></article>
+      </div>
+      <p class="note-card card">References available upon request.</p>
+    </div>
+  </section>
+
+  <!-- 10 STRENGTHS & SERVICES -->
+  <section class="panel" id="strengths" data-title="Strengths & Services" aria-label="Professional Strengths and Services">
+    <div class="panel-inner">
+      <h2 class="p-title"><span>10</span> Professional Strengths &amp; Services</h2>
+      <div class="strengths">
+        <span>🧠 Analytical Thinking</span><span>🧩 Problem Solving</span><span>🔍 Attention to Detail</span><span>💬 Communication</span><span>📝 Documentation</span><span>🤝 Teamwork</span><span>🔄 Adaptability</span><span>🎯 Independent Working</span>
+      </div>
+      <div class="services-grid">
+        <div class="card svc"><h3>🗄️ SQL &amp; Database</h3><ul class="tick"><li>SQL Queries</li><li>Database Operations</li><li>Data Retrieval and Validation</li><li>Database Troubleshooting</li></ul></div>
+        <div class="card svc"><h3>🧪 Software Quality Assurance</h3><ul class="tick"><li>Manual Testing</li><li>Website Testing</li><li>Mobile Application Testing</li><li>API Testing</li><li>Performance Testing</li><li>Automation Testing</li></ul></div>
+        <div class="card svc"><h3>🛒 E-commerce &amp; eBay</h3><ul class="tick"><li>eBay Store Management</li><li>Product Research</li><li>Product Listing Optimization</li><li>Inventory Management</li><li>Order Processing</li><li>E-commerce Operations</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 HIRE ME -->
+  <section class="panel" id="hire" data-title="Hire Me / Contact" aria-label="Hire Me and Contact">
+    <div class="panel-inner">
+      <h2 class="p-title"><span>11</span> Hire Me / Contact</h2>
+      <p class="p-lead">Open to SQA, SQL, and e-commerce work. Reach me directly, or hire me through my professional profiles.</p>
+      <div class="hire-grid">
+        <div class="card hire-contact">
+          <h3>Contact details (from my CV)</h3>
+          <ul class="contact-list">
+            <li>📍 <span>Islamabad, Pakistan</span></li>
+            <li>✉️ <a href="mailto:noman.shahid437@gmail.com">noman.shahid437@gmail.com</a></li>
+            <li>📞 <a href="tel:+923055618922">0305-5618922</a></li>
+          </ul>
+          <p class="hire-note">Full-time: SQL &amp; SQA Associate at Mercury Sols · Part-time: eBay &amp; e-commerce operations.</p>
+          <p class="hire-note">References available upon request.</p>
+        </div>
+        <div class="card hire-platforms">
+          <h3>Hire me on</h3>
+          <a class="platform-btn fiverr" href="https://www.fiverr.com/m_noman_shahid" target="_blank" rel="noopener"><span class="pf-icon" aria-hidden="true">fi</span> Hire Me on Fiverr</a>
+          <span class="platform-btn pph is-pending" aria-disabled="true" title="Profile link not provided yet"><span class="pf-icon" aria-hidden="true">P</span> Hire Me on PeoplePerHour</span>
+          <span class="platform-btn linkedin is-pending" aria-disabled="true" title="Profile link not provided yet"><span class="pf-icon" aria-hidden="true">in</span> Connect on LinkedIn</span>
+          <p class="pending-note">PeoplePerHour and LinkedIn buttons will be activated as soon as the profile links are provided — no placeholder links are used on this site.</p>
+        </div>
+      </div>
+      <footer class="site-foot"><p>© 2026 Muhammad Noman Shahid · SQL &amp; SQA Associate · eBay &amp; E-commerce Operations</p></footer>
+    </div>
+  </section>
+
 </main>
-<script src="main.js"></script>
+
 <script src="scene.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
