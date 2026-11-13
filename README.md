@@ -4,7 +4,7 @@ A premium personal portfolio built **strictly from my CV** — no invented compa
 
 **Content (from the CV):** SQL & SQA Associate at Mercury Sols (full-time, Sep 2026 – Present) · eBay Store Management & E-commerce Operations (part-time, remote) · Facilitation Officer at Pakistan Revenue Automation Ltd. (2020–2024) · YouTube Content Manager, Whizzy Marketing (2019–2020) · Digital Marketing Associate, Zaman IT Networks (2017–2019) · BS Information Technology, GC University Faisalabad.
 
-**11 sections:** Introduction · Professional Summary · Technical Skills · Professional Experience · SQL & Database Expertise · SQA · eBay & E-commerce · Projects & Work Showcase (CV work only, contribution stated, **no external project links**) · Education · Strengths & Services · Hire Me / Contact.
+**11 sections:** Introduction · Professional Summary · Technical Skills · Professional Experience · SQL & Database Expertise · SQA · eBay & E-commerce · Projects & Work Showcase (CV work + the products he built as an independent product builder — added at his request 2026-11-13; contribution stated, **no external project links**) · Education · Strengths & Services · Hire Me / Contact.
 
 **Signature interaction — globe-like 3D rotation:** in Animated mode every section is a full-screen panel; scrolling, swiping, arrow keys, the dot indicators, the menu, or Prev/Next rotates the current panel away around a vertical axis while the next rotates in (CSS 3D transforms + perspective, transitions locked while running). Wheel input scrolls a panel's own content first and only rotates at its top/bottom edge.
 

@@ -120,6 +120,10 @@ ul.tick li::before{content:'✓';position:absolute;left:0;color:var(--green);fon
 .v5{background:linear-gradient(135deg,#d9f7ea,#cdf0ff)}.v6{background:linear-gradient(135deg,#ffe3d3,#fff0c2)}
 .v7{background:linear-gradient(135deg,#e2e6ff,#ffdfee)}.v8{background:linear-gradient(135deg,#dcf5e3,#e5ecff)}
 .v9{background:linear-gradient(135deg,#ffe0e0,#ffeec9)}.v10{background:linear-gradient(135deg,#e6dcff,#ffe3f1)}
+.v11{background:linear-gradient(135deg,#c9f2ff,#d9ffe8)}.v12{background:linear-gradient(135deg,#ffe9b8,#ffc9d9)}
+.v13{background:linear-gradient(135deg,#d3e5ff,#e2ffd9)}.v14{background:linear-gradient(135deg,#ffd6e8,#ffeef7)}
+.v15{background:linear-gradient(135deg,#d9e8ff,#cfdcff)}.v16{background:linear-gradient(135deg,#e8dcff,#d3f4ff)}
+.v17{background:linear-gradient(135deg,#e6e6e6,#d9f0ff)}.v18{background:linear-gradient(135deg,#ffedc9,#d9ffe3)}
 .show p{color:#2a3557;font-size:.94rem}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
 .contrib{font-size:.9rem;color:var(--muted);border-top:1px dashed var(--border);padding-top:9px}
